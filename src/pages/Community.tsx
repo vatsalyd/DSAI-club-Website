@@ -4,27 +4,103 @@ import Layout from "@/components/layout/Layout";
 type Member = {
   name: string;
   role: string;
-  github: string;
-  linkedin: string;
-  imageUrl?: string;
+  github?: string;
+  linkedin?: string;
+  imageUrl: string;
 };
 
 const coordinators: Member[] = [
-  { name: "Rahul Sharma", role: "Club President", github: "#", linkedin: "#" },
-  { name: "Priya Patel", role: "Vice President", github: "#", linkedin: "#" },
-  { name: "Amit Kumar", role: "Technical Lead", github: "#", linkedin: "#" },
-  { name: "Sneha Reddy", role: "Events Coordinator", github: "#", linkedin: "#" },
+  {
+    name: "Kesav Patneedi",
+    role: "Coordinator",
+    imageUrl: "/community/coordinators/Kesav Patneedi.jpg",
+  },
+  {
+    name: "Varun Rao",
+    role: "Coordinator",
+    imageUrl: "/community/coordinators/Varun Rao.jpeg",
+  },
 ];
 
 const coreMembers: Member[] = [
-  { name: "Vikash Singh", role: "ML Engineer", github: "#", linkedin: "#" },
-  { name: "Ananya Gupta", role: "Data Analyst", github: "#", linkedin: "#" },
-  { name: "Rohan Verma", role: "Backend Developer", github: "#", linkedin: "#" },
-  { name: "Kavya Joshi", role: "Research Lead", github: "#", linkedin: "#" },
-  { name: "Arjun Nair", role: "UI/UX Designer", github: "#", linkedin: "#" },
-  { name: "Meera Iyer", role: "Content Lead", github: "#", linkedin: "#" },
-  { name: "Siddharth Menon", role: "DevOps", github: "#", linkedin: "#" },
-  { name: "Neha Saxena", role: "Community Manager", github: "#", linkedin: "#" },
+  {
+    name: "Farhan",
+    role: "Core Member",
+    imageUrl: "/community/core/Farhan.jpeg",
+  },
+  {
+    name: "Vatsal Yadav",
+    role: "Core Member",
+    imageUrl: "/community/core/Vatsal Yadav.jpg",
+  },
+  {
+    name: "Pranay",
+    role: "Core Member",
+    imageUrl: "/community/core/Pranay.jpeg",
+  },
+  {
+    name: "Shashank Yadav",
+    role: "Core Member",
+    imageUrl: "/community/core/ShashankYadav.jpg",
+  },
+  {
+    name: "Sarthak",
+    role: "Core Member",
+    imageUrl: "/community/core/Sarthak.jpg",
+  },
+  {
+    name: "Himanshu",
+    role: "Core Member",
+    imageUrl: "/community/core/Himanshu.jpg",
+  },
+  {
+    name: "Rudra Mehul Dudhat",
+    role: "Core Member",
+    imageUrl: "/community/core/Rudra Mehul Dudhat.jpg",
+  },
+  {
+    name: "Devanshu",
+    role: "Core Member",
+    imageUrl: "/community/core/Devanshu.jpg",
+  },
+  {
+    name: "Siddhesh Bansal",
+    role: "Core Member",
+    imageUrl: "/community/core/Siddhesh Bansal.jpg",
+  },
+];
+
+const contributors: Member[] = [
+  {
+    name: "Viresh Koli",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Viresh Koli.jpg",
+  },
+  {
+    name: "Neha Bharti",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Neha Bharti.jpeg",
+  },
+  {
+    name: "Shri",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Shri.jpg",
+  },
+  {
+    name: "Akhilesh Kumar Yadav",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Akhilesh Kumar Yadav.jpg",
+  },
+  {
+    name: "Rahul Raj",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Rahul Raj.jpg",
+  },
+  {
+    name: "Kinshuk Gupta",
+    role: "Contributor",
+    imageUrl: "/community/contributors/Kinshuk Gupta.jpg",
+  },
 ];
 
 const MemberCard = ({ name, role, github, linkedin, imageUrl }: Member) => (
@@ -47,20 +123,26 @@ const MemberCard = ({ name, role, github, linkedin, imageUrl }: Member) => (
       {name}
     </h3>
     <p className="text-muted-foreground text-sm text-center mb-4">{role}</p>
-    <div className="flex justify-center gap-3">
-      <a
-        href={github}
-        className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
-      >
-        <Github className="w-4 h-4" />
-      </a>
-      <a
-        href={linkedin}
-        className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
-      >
-        <Linkedin className="w-4 h-4" />
-      </a>
-    </div>
+    {(github || linkedin) && (
+      <div className="flex justify-center gap-3 mt-2">
+        {github && (
+          <a
+            href={github}
+            className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+        )}
+        {linkedin && (
+          <a
+            href={linkedin}
+            className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+        )}
+      </div>
+    )}
   </div>
 );
 
@@ -84,7 +166,7 @@ const Community = () => {
           {/* Coordinators */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Coordinators</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {coordinators.map((member, index) => (
                 <MemberCard key={index} {...member} />
               ))}
@@ -92,10 +174,20 @@ const Community = () => {
           </div>
 
           {/* Core Members */}
-          <div>
+          <div className="mb-16">
             <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Core Members</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {coreMembers.map((member, index) => (
+                <MemberCard key={index} {...member} />
+              ))}
+            </div>
+          </div>
+
+          {/* Contributors */}
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Contributors</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {contributors.map((member, index) => (
                 <MemberCard key={index} {...member} />
               ))}
             </div>
