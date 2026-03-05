@@ -104,12 +104,12 @@ const contributors: Member[] = [
 ];
 
 const MemberCard = ({ name, role, github, linkedin, imageUrl }: Member) => (
-  <div className="glass-card rounded-xl p-6 hover:glow-primary transition-all duration-300 group">
+  <div className="glass-card rounded-xl p-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300 group">
     {imageUrl ? (
       <img
         src={imageUrl}
         alt={name}
-        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-primary/60 shadow-lg"
+        className="w-24 h-24 md:w-28 md:h-28 rounded-full mx-auto mb-4 object-cover border-2 border-primary/60 shadow-lg transform transition-transform duration-300 group-hover:scale-105"
       />
     ) : (
       <div className="w-20 h-20 rounded-full gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary-foreground">

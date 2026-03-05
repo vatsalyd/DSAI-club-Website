@@ -51,13 +51,20 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/projects">
-                <Button size="lg" className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2">
+                <Button
+                  size="lg"
+                  className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2"
+                >
                   View our Projects
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/community">
-                <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-border text-foreground hover:bg-secondary"
+                >
                   Meet the Team
                 </Button>
               </Link>
@@ -71,7 +78,7 @@ const HeroSection = () => {
                   <a
                     key={i}
                     href="#"
-                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all"
+                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary hover:-translate-y-1 transition-all duration-300"
                   >
                     <Icon className="w-5 h-5" />
                   </a>

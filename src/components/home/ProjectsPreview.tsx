@@ -27,7 +27,7 @@ const ProjectsPreview = () => {
   return (
     <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12 animate-slide-up">
           <div>
             <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Projects</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
@@ -48,7 +48,7 @@ const ProjectsPreview = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group glass-card rounded-xl overflow-hidden hover:glow-primary transition-all duration-300"
+              className="group glass-card rounded-xl overflow-hidden hover:glow-primary hover:-translate-y-2 transition-all duration-300 animate-slide-up"
             >
               <div className={`h-40 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
                 <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">

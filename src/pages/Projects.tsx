@@ -75,7 +75,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl p-6 hover:glow-primary transition-all duration-300 group flex flex-col"
+                className="glass-card rounded-xl p-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300 group flex flex-col animate-slide-up"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
