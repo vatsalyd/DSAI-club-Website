@@ -58,14 +58,28 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Follow Us</h4>
             <div className="flex gap-3">
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Mail, href: "#" },
+                {
+                  icon: Github,
+                  href: "https://github.com/dsai-iitbhilai",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/dsai-club-iit-bhilai",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/dsai_iitbhilai",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:dsai_club@iitbhilai.ac.in",
+                },
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
                 >
                   <social.icon className="w-5 h-5" />

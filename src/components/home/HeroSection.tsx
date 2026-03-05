@@ -75,13 +75,32 @@ const HeroSection = () => {
             <div className="flex items-center gap-4 pt-4">
               <span className="text-sm text-muted-foreground">Our Socials</span>
               <div className="flex gap-2">
-                {[Github, Linkedin, Mail, Instagram].map((Icon, i) => (
+                {[
+                  {
+                    icon: Github,
+                    href: "https://github.com/dsai-iitbhilai",
+                  },
+                  {
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/company/dsai-club-iit-bhilai",
+                  },
+                  {
+                    icon: Instagram,
+                    href: "https://www.instagram.com/dsai_iitbhilai",
+                  },
+                  {
+                    icon: Mail,
+                    href: "mailto:dsai_club@iitbhilai.ac.in",
+                  },
+                ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary hover:-translate-y-1 transition-all duration-300"
                   >
-                    <Icon className="w-5 h-5" />
+                    <social.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>

@@ -78,12 +78,16 @@ const Projects = () => {
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
                     {project.status}
                   </span>
-                  <a
-                    href={project.github}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
 
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
@@ -105,9 +109,13 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <Button variant="link" className="text-primary p-0 h-auto gap-1 w-fit">
-                  View Details <ExternalLink className="w-4 h-4" />
-                </Button>
+                {project.github && (
+                  <Button asChild variant="link" className="text-primary p-0 h-auto gap-1 w-fit">
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      View Details <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
               </div>
             ))}
           </div>
