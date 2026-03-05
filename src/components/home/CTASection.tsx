@@ -1,5 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -27,14 +26,14 @@ const CTASection = () => {
               Get access to exclusive resources, workshops, and mentorship.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2">
-                Get Started Now
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
-                Learn More
-              </Button>
+            <div className="pt-4">
+              <p className="text-sm text-muted-foreground mb-2">Contact us at</p>
+              <a
+                href="mailto:dsai_club@iitbhilai.ac.in"
+                className="text-lg md:text-xl font-semibold text-primary hover:text-primary/80 transition-colors break-all"
+              >
+                dsai_club@iitbhilai.ac.in
+              </a>
             </div>
           </div>
         </div>

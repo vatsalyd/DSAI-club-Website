@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, Instagram, TrendingUp } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Instagram, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -72,7 +72,7 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-4 pt-4">
               <span className="text-sm text-muted-foreground">Our Socials</span>
               <div className="flex gap-2">
                 {[
@@ -88,10 +88,6 @@ const HeroSection = () => {
                     icon: Instagram,
                     href: "https://www.instagram.com/dsai_iitbhilai",
                   },
-                  {
-                    icon: Mail,
-                    href: "mailto:dsai_club@iitbhilai.ac.in",
-                  },
                 ].map((social, i) => (
                   <a
                     key={i}
@@ -104,6 +100,12 @@ const HeroSection = () => {
                   </a>
                 ))}
               </div>
+              <a
+                href="mailto:dsai_club@iitbhilai.ac.in"
+                className="text-sm text-primary hover:text-primary/80 transition-colors break-all"
+              >
+                dsai_club@iitbhilai.ac.in
+              </a>
             </div>
           </div>
 

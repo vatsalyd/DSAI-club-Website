@@ -1,4 +1,4 @@
-import { Brain, Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                <Brain className="w-6 h-6 text-primary-foreground" />
-              </div>
+              <img
+                src="/logo.jpeg"
+                alt="DSAI Club logo"
+                className="w-10 h-10 md:w-11 md:h-11 rounded-lg object-contain bg-white/90 p-1 shadow-sm"
+              />
               <span className="text-xl font-bold text-foreground">DSAI Club</span>
             </Link>
             <p className="text-muted-foreground text-sm">
@@ -70,10 +72,6 @@ const Footer = () => {
                   icon: Instagram,
                   href: "https://www.instagram.com/dsai_iitbhilai",
                 },
-                {
-                  icon: Mail,
-                  href: "mailto:dsai_club@iitbhilai.ac.in",
-                },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -86,6 +84,12 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            <a
+              href="mailto:dsai_club@iitbhilai.ac.in"
+              className="inline-block mt-4 text-sm text-primary hover:text-primary/80 transition-colors break-all"
+            >
+              dsai_club@iitbhilai.ac.in
+            </a>
           </div>
         </div>
 
