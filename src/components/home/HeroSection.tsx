@@ -12,7 +12,8 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
-      
+      <div className="hero-grid pointer-events-none" />
+
       {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -117,8 +118,8 @@ const HeroSection = () => {
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
           </div>
         </div>
       </div>
