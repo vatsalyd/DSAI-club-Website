@@ -1,14 +1,22 @@
 import { Github, Linkedin } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
-const coordinators = [
+type Member = {
+  name: string;
+  role: string;
+  github: string;
+  linkedin: string;
+  imageUrl?: string;
+};
+
+const coordinators: Member[] = [
   { name: "Rahul Sharma", role: "Club President", github: "#", linkedin: "#" },
   { name: "Priya Patel", role: "Vice President", github: "#", linkedin: "#" },
   { name: "Amit Kumar", role: "Technical Lead", github: "#", linkedin: "#" },
   { name: "Sneha Reddy", role: "Events Coordinator", github: "#", linkedin: "#" },
 ];
 
-const coreMembers = [
+const coreMembers: Member[] = [
   { name: "Vikash Singh", role: "ML Engineer", github: "#", linkedin: "#" },
   { name: "Ananya Gupta", role: "Data Analyst", github: "#", linkedin: "#" },
   { name: "Rohan Verma", role: "Backend Developer", github: "#", linkedin: "#" },
@@ -19,11 +27,22 @@ const coreMembers = [
   { name: "Neha Saxena", role: "Community Manager", github: "#", linkedin: "#" },
 ];
 
-const MemberCard = ({ name, role, github, linkedin }: { name: string; role: string; github: string; linkedin: string }) => (
+const MemberCard = ({ name, role, github, linkedin, imageUrl }: Member) => (
   <div className="glass-card rounded-xl p-6 hover:glow-primary transition-all duration-300 group">
-    <div className="w-20 h-20 rounded-full gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary-foreground">
-      {name.split(' ').map(n => n[0]).join('')}
-    </div>
+    {imageUrl ? (
+      <img
+        src={imageUrl}
+        alt={name}
+        className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-primary/60 shadow-lg"
+      />
+    ) : (
+      <div className="w-20 h-20 rounded-full gradient-primary mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-primary-foreground">
+        {name
+          .split(" ")
+          .map((n) => n[0])
+          .join("")}
+      </div>
+    )}
     <h3 className="text-lg font-semibold text-foreground text-center group-hover:text-primary transition-colors">
       {name}
     </h3>
